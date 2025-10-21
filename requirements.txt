@@ -1,0 +1,11 @@
+azure-identity
+openai
+python-dotenv
+lunr
+requests
+pymupdf4llm
+langchain-text-splitters
+tiktoken>=0.7.0
+matplotlib
+pandas
+Pillow
