@@ -5,14 +5,21 @@ import azure.identity
 import openai
 from dotenv import load_dotenv
 from lunr import lunr
+from pathlib import Path
 
 load_dotenv(override=True)
 API_HOST = os.getenv("API_HOST", "github")
 client = openai.OpenAI(base_url="https://models.github.ai/inference", api_key=os.environ["GITHUB_TOKEN"])
 MODEL_NAME = os.getenv("GITHUB_MODEL", "openai/gpt-4o")
 
-# Index the data from the CSV
-with open("hybrid.csv") as file:
+# Path to the folder where this script lives
+script_dir = Path(__file__).parent
+
+# Path to the CSV inside the 'data' folder at the same level as the script
+csv_path = script_dir / "data" / "hybrid.csv"
+
+# Open the CSV
+with open(csv_path) as file:
     reader = csv.reader(file)
     rows = list(reader)
 documents = [{"id": (i + 1), "body": " ".join(row)} for i, row in enumerate(rows[1:])]
