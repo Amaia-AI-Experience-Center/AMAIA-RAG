@@ -19,8 +19,8 @@ MODEL_NAME = os.getenv("GITHUB_MODEL", "openai/gpt-4o")
 script_dir = Path(__file__).parent
 
 # Path to the SQLite database (using the one from exercise 2)
-db_path = script_dir.parent / "02-csv-rag" / "data" / "hybrid_cars.db"
-
+db_path = script_dir / "data" / "hybrid_cars.db"
+print(f"Using database at: {db_path}")
 # Connect to database
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
@@ -128,7 +128,7 @@ while True:
             sql_query = sql_query.rsplit("```", 1)[0]
         sql_query = sql_query.strip()
 
-        print(f"\n🔍 Generated SQL: {sql_query}")
+        print(f"\nGenerated SQL: {sql_query}")
 
         # Execute the query
         cursor.execute(sql_query)
@@ -147,7 +147,7 @@ while True:
             if len(results) > 10:
                 results_table += f"\n... and {len(results) - 10} more rows"
 
-            print(f"\n📊 Query results ({len(results)} rows):")
+            print(f"\nQuery results ({len(results)} rows):")
             print(results_table)
         else:
             results_table = "No results found."
@@ -163,14 +163,14 @@ while True:
         llm_response = response.choices[0].message.content
         messages.append({"role": "assistant", "content": llm_response})
 
-        print(f"\n💬 Response:")
+        print(f"\nResponse:")
         print(llm_response)
 
     except sqlite3.Error as e:
-        print(f"\n❌ SQL Error: {e}")
+        print(f"\nSQL Error: {e}")
         print("The generated query might be invalid. Please try rephrasing your question.")
     except Exception as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\nError: {e}")
         print("An error occurred. Please try again.")
 
 conn.close()
