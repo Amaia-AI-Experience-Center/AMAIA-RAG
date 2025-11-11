@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from pathlib import Path
 from typing import Dict, List, Set
 
@@ -70,23 +71,34 @@ class KnowledgeGraphRAG:
         Returns top_k most relevant entities.
         """
         query_lower = query.lower()
+        query_tokens = [token for token in re.split(r"\W+", query_lower) if token]
+        if not query_tokens:
+            return []
         matches = []
 
         for entity_id, entity in self.entities.items():
             score = 0
 
             # Check name match
-            if query_lower in entity['name'].lower():
-                score += 10
+            entity_name = entity['name'].lower()
+            name_matches = sum(1 for token in query_tokens if token in entity_name)
+            score += 10 * name_matches
 
             # Check type match
-            if query_lower in entity['type'].lower():
-                score += 5
+            entity_type = entity['type'].lower()
+            type_matches = sum(1 for token in query_tokens if token in entity_type)
+            score += 5 * type_matches
 
             # Check properties
             for key, value in entity.get('properties', {}).items():
-                if query_lower in str(key).lower() or query_lower in str(value).lower():
-                    score += 3
+                key_lower = str(key).lower()
+                value_lower = str(value).lower()
+                prop_matches = sum(
+                    1
+                    for token in query_tokens
+                    if token in key_lower or token in value_lower
+                )
+                score += 3 * prop_matches
 
             if score > 0:
                 matches.append({
@@ -208,11 +220,6 @@ for searching a knowledge graph about technology, programming languages, framewo
 Extract the key entities, concepts, or topics the user is asking about.
 Focus on specific names of languages, frameworks, libraries, organizations, or technical concepts.
 
-Examples:
-- "What is Python used for?" → "Python uses applications"
-- "Tell me about machine learning frameworks" → "machine learning frameworks"
-- "How does React relate to web development?" → "React web development relationship"
-- "What libraries does Python have for data science?" → "Python data science libraries"
 
 Respond with ONLY the keyword query (2-6 words).
 """
