@@ -1,0 +1,375 @@
+{
+  "entities": [
+    {
+      "id": "e1",
+      "name": "Python",
+      "type": "ProgrammingLanguage",
+      "properties": {
+        "paradigm": "Multi-paradigm",
+        "first_appeared": "1991",
+        "designed_by": "Guido van Rossum",
+        "typing": "Dynamic, strong"
+      }
+    },
+    {
+      "id": "e2",
+      "name": "JavaScript",
+      "type": "ProgrammingLanguage",
+      "properties": {
+        "paradigm": "Multi-paradigm",
+        "first_appeared": "1995",
+        "designed_by": "Brendan Eich",
+        "typing": "Dynamic, weak"
+      }
+    },
+    {
+      "id": "e3",
+      "name": "Machine Learning",
+      "type": "Field",
+      "properties": {
+        "domain": "Artificial Intelligence",
+        "description": "Study of computer algorithms that improve automatically through experience"
+      }
+    },
+    {
+      "id": "e4",
+      "name": "Web Development",
+      "type": "Field",
+      "properties": {
+        "domain": "Software Engineering",
+        "description": "Building and maintaining websites and web applications"
+      }
+    },
+    {
+      "id": "e5",
+      "name": "TensorFlow",
+      "type": "Framework",
+      "properties": {
+        "developed_by": "Google Brain",
+        "first_release": "2015",
+        "license": "Apache 2.0",
+        "description": "End-to-end platform for machine learning"
+      }
+    },
+    {
+      "id": "e6",
+      "name": "Django",
+      "type": "Framework",
+      "properties": {
+        "first_release": "2005",
+        "license": "BSD",
+        "description": "High-level Python web framework"
+      }
+    },
+    {
+      "id": "e7",
+      "name": "React",
+      "type": "Framework",
+      "properties": {
+        "developed_by": "Meta (Facebook)",
+        "first_release": "2013",
+        "license": "MIT",
+        "description": "JavaScript library for building user interfaces"
+      }
+    },
+    {
+      "id": "e8",
+      "name": "NumPy",
+      "type": "Library",
+      "properties": {
+        "first_release": "2006",
+        "license": "BSD",
+        "description": "Fundamental package for scientific computing in Python"
+      }
+    },
+    {
+      "id": "e9",
+      "name": "Pandas",
+      "type": "Library",
+      "properties": {
+        "first_release": "2008",
+        "license": "BSD",
+        "description": "Data manipulation and analysis library for Python"
+      }
+    },
+    {
+      "id": "e10",
+      "name": "Node.js",
+      "type": "Runtime",
+      "properties": {
+        "first_release": "2009",
+        "license": "MIT",
+        "description": "JavaScript runtime built on Chrome's V8 engine"
+      }
+    },
+    {
+      "id": "e11",
+      "name": "Data Science",
+      "type": "Field",
+      "properties": {
+        "domain": "Interdisciplinary",
+        "description": "Field that uses scientific methods to extract knowledge from data"
+      }
+    },
+    {
+      "id": "e12",
+      "name": "OpenAI",
+      "type": "Organization",
+      "properties": {
+        "founded": "2015",
+        "type": "AI Research Lab",
+        "description": "AI research and deployment company"
+      }
+    },
+    {
+      "id": "e13",
+      "name": "GPT",
+      "type": "Model",
+      "properties": {
+        "full_name": "Generative Pre-trained Transformer",
+        "type": "Large Language Model",
+        "description": "Autoregressive language model using transformer architecture"
+      }
+    },
+    {
+      "id": "e14",
+      "name": "Natural Language Processing",
+      "type": "Field",
+      "properties": {
+        "domain": "Artificial Intelligence",
+        "description": "Subfield of AI focused on interaction between computers and human language"
+      }
+    },
+    {
+      "id": "e15",
+      "name": "REST API",
+      "type": "Concept",
+      "properties": {
+        "full_name": "Representational State Transfer API",
+        "description": "Architectural style for distributed systems"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "r1",
+      "source": "e1",
+      "target": "e3",
+      "type": "USED_IN",
+      "properties": {
+        "description": "Python is widely used in Machine Learning",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r2",
+      "source": "e2",
+      "target": "e4",
+      "type": "USED_IN",
+      "properties": {
+        "description": "JavaScript is essential for Web Development",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r3",
+      "source": "e5",
+      "target": "e1",
+      "type": "WRITTEN_IN",
+      "properties": {
+        "description": "TensorFlow has Python API",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r4",
+      "source": "e6",
+      "target": "e1",
+      "type": "WRITTEN_IN",
+      "properties": {
+        "description": "Django is a Python framework",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r5",
+      "source": "e7",
+      "target": "e2",
+      "type": "WRITTEN_IN",
+      "properties": {
+        "description": "React is a JavaScript library",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r6",
+      "source": "e5",
+      "target": "e3",
+      "type": "USED_FOR",
+      "properties": {
+        "description": "TensorFlow is used for Machine Learning",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r7",
+      "source": "e6",
+      "target": "e4",
+      "type": "USED_FOR",
+      "properties": {
+        "description": "Django is used for Web Development",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r8",
+      "source": "e7",
+      "target": "e4",
+      "type": "USED_FOR",
+      "properties": {
+        "description": "React is used for Web Development",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r9",
+      "source": "e8",
+      "target": "e1",
+      "type": "WRITTEN_IN",
+      "properties": {
+        "description": "NumPy is a Python library",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r10",
+      "source": "e9",
+      "target": "e1",
+      "type": "WRITTEN_IN",
+      "properties": {
+        "description": "Pandas is a Python library",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r11",
+      "source": "e8",
+      "target": "e3",
+      "type": "USED_IN",
+      "properties": {
+        "description": "NumPy is fundamental for Machine Learning",
+        "strength": "supporting"
+      }
+    },
+    {
+      "id": "r12",
+      "source": "e9",
+      "target": "e11",
+      "type": "USED_IN",
+      "properties": {
+        "description": "Pandas is essential for Data Science",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r13",
+      "source": "e10",
+      "target": "e2",
+      "type": "EXECUTES",
+      "properties": {
+        "description": "Node.js executes JavaScript",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r14",
+      "source": "e10",
+      "target": "e4",
+      "type": "USED_IN",
+      "properties": {
+        "description": "Node.js is used in Web Development",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r15",
+      "source": "e3",
+      "target": "e11",
+      "type": "PART_OF",
+      "properties": {
+        "description": "Machine Learning is a key part of Data Science",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r16",
+      "source": "e1",
+      "target": "e11",
+      "type": "USED_IN",
+      "properties": {
+        "description": "Python is the dominant language in Data Science",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r17",
+      "source": "e13",
+      "target": "e12",
+      "type": "DEVELOPED_BY",
+      "properties": {
+        "description": "GPT models are developed by OpenAI",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r18",
+      "source": "e13",
+      "target": "e14",
+      "type": "USED_FOR",
+      "properties": {
+        "description": "GPT is used for Natural Language Processing tasks",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r19",
+      "source": "e14",
+      "target": "e3",
+      "type": "PART_OF",
+      "properties": {
+        "description": "NLP is a subfield of Machine Learning",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r20",
+      "source": "e9",
+      "target": "e8",
+      "type": "DEPENDS_ON",
+      "properties": {
+        "description": "Pandas is built on top of NumPy",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r21",
+      "source": "e15",
+      "target": "e4",
+      "type": "USED_IN",
+      "properties": {
+        "description": "REST API is a fundamental concept in Web Development",
+        "strength": "primary"
+      }
+    },
+    {
+      "id": "r22",
+      "source": "e6",
+      "target": "e15",
+      "type": "SUPPORTS",
+      "properties": {
+        "description": "Django has built-in support for REST APIs",
+        "strength": "supporting"
+      }
+    }
+  ]
+}

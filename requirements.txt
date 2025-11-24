@@ -9,3 +9,4 @@ tiktoken>=0.7.0
 matplotlib
 pandas
 Pillow
+networkx>=3.0
