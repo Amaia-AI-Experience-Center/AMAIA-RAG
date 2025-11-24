@@ -43,7 +43,6 @@ for filename in filenames:
     all_chunks.extend(file_chunks)
  
 # Save the documents with embeddings to a JSON file
-
 output_file = data_dir / "rag_ingested_chunks.json"
 
 with open(output_file, "w") as f:

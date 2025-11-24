@@ -10,3 +10,4 @@ matplotlib
 pandas
 Pillow
 networkx>=3.0
+neo4j>=5.0.0
