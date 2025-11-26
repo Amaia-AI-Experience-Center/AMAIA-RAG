@@ -1,4 +1,7 @@
 azure-identity
+azure-core
+azure-storage-blob
+azure-search-documents
 openai
 python-dotenv
 lunr
@@ -9,3 +12,5 @@ tiktoken>=0.7.0
 matplotlib
 pandas
 Pillow
+networkx>=3.0
+neo4j>=5.0.0
