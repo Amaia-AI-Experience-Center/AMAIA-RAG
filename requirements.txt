@@ -1,4 +1,7 @@
 azure-identity
+azure-core
+azure-storage-blob
+azure-search-documents
 openai
 python-dotenv
 lunr
